@@ -2,6 +2,7 @@ const express=require('express');
 require('dotenv').config();
 const cors=require('cors');
 const connection = require('./Config/db');
+const UserRouter = require('./Routes/UserRoute');
 const app=express();
 
 app.use(cors({
@@ -14,6 +15,7 @@ app.get('/',(req,res)=>(
       res.send('welcome')    
 ))
 
+app.use('/user',UserRouter);
 
 
 
